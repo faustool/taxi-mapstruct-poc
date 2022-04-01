@@ -1,6 +1,5 @@
 <?xml version="1.0"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.vfs.poc.taxi</groupId>
   <artifactId>taxi-mapstruct-poc</artifactId>
@@ -28,6 +27,11 @@
     </dependencies>
   </dependencyManagement>
   <dependencies>
+    <dependency>
+      <groupId>org.taxilang</groupId>
+      <artifactId>taxi-annotations</artifactId>
+      <version>1.32.5</version>
+    </dependency>
     <dependency>
       <groupId>io.quarkus</groupId>
       <artifactId>quarkus-picocli</artifactId>
@@ -116,4 +120,37 @@
       </properties>
     </profile>
   </profiles>
+
+  <repositories>
+    <repository>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+      <id>taxi-snapshots</id>
+      <name>taxi-snapshots</name>
+      <url>https://repo.vyne.co/snapshot</url>
+    </repository>
+    <repository>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <id>taxi-releases</id>
+      <name>taxi-releases</name>
+      <url>https://repo.vyne.co/release</url>
+    </repository>
+    <repository>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+      <id>internal-repo</id>
+      <name>internal-repo</name>
+      <url>https://newcorp.nexus.com</url>
+    </repository>
+  </repositories>
 </project>
